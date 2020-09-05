@@ -131,7 +131,7 @@ gulp.task('stylint', function () {
 });
 
 gulp.task("css", function () {
-	return gulp.src('src/assets/stylus/style.styl')
+	return gulp.src('src/assets/stylus/my.styl')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		// .pipe(wait(500))
@@ -139,9 +139,6 @@ gulp.task("css", function () {
 		.pipe(autoprefixer({
 			cascade: false
 		}))
-		.pipe(gulp.dest('build/assets/css/'))
-		.pipe(csso())
-		.pipe(rename("style.min.css"))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('build/assets/css/'))
 		.pipe(browserSync.reload({
